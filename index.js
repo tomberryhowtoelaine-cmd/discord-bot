@@ -98,6 +98,11 @@ client.on("messageCreate", async message => {
     return;
   }
 
+  if (content === "!Cheezy") {
+    await message.reply("Soon, *OUR* Cheezy");
+    return;
+  }
+
    if (content === "!beer") {
     await message.reply("Take a FST beer my dear friend !");
     return;
