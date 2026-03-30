@@ -12,12 +12,12 @@ const client = new Client({
 const TOKEN = process.env.TOKEN;
 const CHANNEL_ID = process.env.CHANNEL_ID;
 
-// IDs des rôles
+// Ids Role
 const ROLE_TRAP_1 = "<@&1462315632019247156>";
 const ROLE_TRAP_2 = "<@&1462315838093791423>";
 const ROLE_ARENA = "<@&1466790142927962238>";
 
-// Dates d'envoi
+// Date send
 let lastSentEvening = null;
 let lastSentMorning = null;
 
@@ -77,6 +77,11 @@ client.on("messageCreate", async message => {
     return;
   }
 
+  if (content === "!Prax") {
+    await message.reply("Take a beer with me my friend !");
+    return;
+  }
+
   if (content === "!ping arena") {
     const channel = await client.channels.fetch(CHANNEL_ID);
     await channel.send(`${ROLE_ARENA} Beep Boop Arena reminder ! (test)`);
@@ -101,6 +106,3 @@ client.on("messageCreate", async message => {
 
 
 client.login(TOKEN);
-
-
-
